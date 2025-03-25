@@ -32,19 +32,16 @@ const quotes = [
 const randomQuotes = document.querySelector('.quote--text');
 const randomQuotesAuthor = document.querySelector('.quote--author');
 const btn = document.getElementById("generate-quote"); 
-let firstClick = true;
+
 
 function displayRandomQuote() {
     console.log("Cambiando cita...");
     const randomIndex = Math.floor(Math.random() * quotes.length);
     const pickedQuote = quotes[randomIndex];
-    
-    if (firstClick) { randomQuotes.textContent = quotes[0].quote;
-        randomQuotesAuthor.textContent = quotes[0].author;
-    firstClick= false; }
-        else {randomQuotes.textContent = pickedQuote.quote;
+ 
+    randomQuotes.textContent = pickedQuote.quote;
     randomQuotesAuthor.textContent = pickedQuote.author;}
     
-}
+
 btn.addEventListener("click", displayRandomQuote);
 
